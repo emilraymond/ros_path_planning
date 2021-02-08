@@ -14,39 +14,39 @@
     <arg name="debug" value="false"/>
   </include>
 
+
+
   <group ns="robot1">
-    <param name="robot1_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro robot_namespace:=robot1" />
-    <node name="rosbot_spawn_robot1" pkg="gazebo_ros" type="spawn_model" args="-urdf -model robot1 -x 0.5 -y 0.5 -z $(arg z_pos) -Y 1.57 -param robot2_description -robot_namespace robot1" />
-    <rosparam command="load" file="$(find joint_state_controller)/joint_state_controller.yaml" />
-    <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="joint_state_controller"/>
-    
-    <node name="robot1_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
-      <param name="tf_prefix" value="robot1"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro robot_namespace:=robot1" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+      <param name="publish_frequency" type="double" value="50.0" />
+      <param name="tf_prefix" value="robot1_tf" />
     </node>
-    <node pkg="tf" type="static_transform_publisher" name="robot1_odom" args="0 0 0 0 0 0 1 map robot1/odom 100" />
+
+     <!-- -robot_namespace robot1 -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model robot1 -x -1.0 -y 0.0 -z $(arg z_pos) -Y 1.57 -param robot_description" />
   </group>
 
-  <!-- <group ns="robot2">
-    <param name="robot2_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro robot_namespace:=robot2" />
-    <node name="rosbot_spawn_robot2" pkg="gazebo_ros" type="spawn_model" args="-urdf -model robot2 -x 0.5 -y -0.5 -z $(arg z_pos) -Y 1.57 -param robot2_description -robot_namespace robot2" />
-    <rosparam command="load" file="$(find joint_state_controller)/joint_state_controller.yaml" />
-    <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="joint_state_controller"/>
-    
-    <node name="robot2_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
-      <param name="tf_prefix" value="robot2"/>
+  <group ns="robot2">
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro robot_namespace:=robot1" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+      <param name="publish_frequency" type="double" value="50.0" />
+      <param name="tf_prefix" value="robot2_tf" />
     </node>
-    <node pkg="tf" type="static_transform_publisher" name="robot2_odom" args="0 0 0 0 0 0 1 map robot2/odom 100" />
+
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model robot2 -x 0.0 -y -0.0 -z $(arg z_pos) -Y 1.57 -param robot_description" />
   </group>
 
   <group ns="robot3">
-    <param name="robot3_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro robot_namespace:=robot3" />
-    <node name="rosbot_spawn_robot3" pkg="gazebo_ros" type="spawn_model" args="-urdf -model robot3 -x -0.5 -y 0.5 -z $(arg z_pos) -Y 1.57 -param robot2_description -robot_namespace robot3" />
-    <rosparam command="load" file="$(find joint_state_controller)/joint_state_controller.yaml" />
-    <node name="joint_state_controller_spawner" pkg="controller_manager" type="spawner" output="screen" args="joint_state_controller"/>
-    
-    <node name="robot3_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
-      <param name="tf_prefix" value="robot3"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro robot_namespace:=robot1" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+      <param name="publish_frequency" type="double" value="50.0" />
+      <param name="tf_prefix" value="robot3_tf" />
     </node>
-    <node pkg="tf" type="static_transform_publisher" name="robot3_odom" args="0 0 0 0 0 0 1 map robot3/odom 100" />
-  </group> -->
+
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model robot3 -x 1.0 -y 0.0 -z $(arg z_pos) -Y 1.57 -param robot_description " />
+  </group>
 </launch>
