@@ -50,7 +50,7 @@ def return_to_base():
 
 
 ## **Global Variables**
-home = Pose()
+home, home1, home2, home3 = Pose(), Pose(), Pose(), Pose()
 send_home = True
 robotName = ""
 
@@ -60,8 +60,19 @@ if __name__ == '__main__':
         if len(sys.argv) > 1:
             robotName = sys.argv[1]
 
-        home.position = Point(0.0, 0.0, 0.0)
-        home.orientation = Quaternion(0.0, 0.0, 1.0, 1.0)
+        home1.position = Point(-1.0, 0.0, 0.0)
+        home1.orientation = Quaternion(0.0, 0.0, 1.0, 1.0)
+        home2.position = Point(0.0, 0.0, 0.0)
+        home2.orientation = Quaternion(0.0, 0.0, 1.0, 1.0)
+        home3.position = Point(1.0, 0.0, 0.0)
+        home3.orientation = Quaternion(0.0, 0.0, 1.0, 1.0)
+        
+        if robotName == 'robot1':
+            home = home1
+        elif robotName == 'robot3':
+            home = home3
+        else:
+            home = home2
 
         rospy.init_node(robotName+'_move_base_py')
         rospy.Subscriber('/'+robotName+'/move_base/goal', MoveBaseActionGoal, callback_movebase_goal)
