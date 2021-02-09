@@ -7,6 +7,9 @@ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31
 sudo apt update
 sudo apt install ros-noetic-desktop-full
 
+## Install ROS State Publisher
+sudo apt-get install ros-noetic-robot-state-publisher
+
 ## Install Gazebo
 sudo apt-get install ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control
 
