@@ -67,7 +67,11 @@ if __name__ == '__main__':
         rospy.Subscriber(robotName+'/move_base/goal', MoveBaseActionGoal, callback_movebase_goal)
         rospy.Subscriber(robotName+'/move_base/result', MoveBaseActionResult, callback_movebase_result)
         
-        rospy.loginfo("Listenning...")
+        if len(sys.argv) > 1:
+            rospy.loginfo("Listenning on %s...", robotName)
+        else:
+            rospy.loginfo("Listenning...")
+
         rospy.spin()
 
     except rospy.ROSInterruptException:
