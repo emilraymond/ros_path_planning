@@ -64,8 +64,8 @@ if __name__ == '__main__':
         home.orientation = Quaternion(0.0, 0.0, 1.0, 1.0)
 
         rospy.init_node(robotName+'_move_base_py')
-        rospy.Subscriber(robotName+'/move_base/goal', MoveBaseActionGoal, callback_movebase_goal)
-        rospy.Subscriber(robotName+'/move_base/result', MoveBaseActionResult, callback_movebase_result)
+        rospy.Subscriber('/'+robotName+'/move_base/goal', MoveBaseActionGoal, callback_movebase_goal)
+        rospy.Subscriber('/'+robotName+'/move_base/result', MoveBaseActionResult, callback_movebase_result)
         
         if len(sys.argv) > 1:
             rospy.loginfo("Listenning on %s...", robotName)
