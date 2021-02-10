@@ -35,41 +35,43 @@
     <remap from="scan"                                                              to="$(arg laser_topic)"/>
     <remap from="map"                                                               to="/map" />
     <remap from="/move_base_simple/goal"				                                    to="/robot1/move_base_simple/goal" />
-    <remap from="/move_base/DWAPlannerROS/cost_cloud"				                        to="/robot1/move_base/DWAPlannerROS/cost_cloud" />
-    <remap from="/move_base/DWAPlannerROS/global_plan"				                      to="/robot1/move_base/DWAPlannerROS/global_plan" />
-    <remap from="/move_base/DWAPlannerROS/local_plan"				                        to="/robot1/move_base/DWAPlannerROS/local_plan" />
-    <remap from="/move_base/DWAPlannerROS/parameter_descriptions"	                  to="/robot1/move_base/DWAPlannerROS/parameter_descriptions" />
-    <remap from="/move_base/DWAPlannerROS/parameter_updates"		                    to="/robot1/move_base/DWAPlannerROS/parameter_updates" />
-    <remap from="/move_base/DWAPlannerROS/trajectory_cloud"			                    to="/robot1/move_base/DWAPlannerROS/trajectory_cloud" />
-    <remap from="/move_base/NavfnROS/plan"				                                  to="/robot1/move_base/NavfnROS/plan" />
-    <remap from="/move_base/cancel"				                                          to="/robot1/move_base/cancel" />
-    <remap from="/move_base/current_goal"				                                    to="/robot1/move_base/current_goal" />
     <remap from="/move_base/feedback"				                                        to="/robot1/move_base/feedback" />
-    <remap from="/move_base/global_costmap/costmap"				                          to="/robot1/move_base/global_costmap/costmap" />
-    <remap from="/move_base/global_costmap/costmap_updates"			                    to="/robot1/move_base/global_costmap/costmap_updates" />
-    <remap from="/move_base/global_costmap/footprint"				                        to="/robot1/move_base/global_costmap/footprint" />
-    <remap from="/move_base/global_costmap/inflation_layer/parameter_descriptions"  to="/robot1/move_base/global_costmap/inflation_layer/parameter_descriptions" />
-    <remap from="/move_base/global_costmap/inflation_layer/parameter_updates"				to="/robot1/move_base/global_costmap/inflation_layer/parameter_updates" />
-    <remap from="/move_base/global_costmap/obstacle_layer/parameter_descriptions"		to="/robot1/move_base/global_costmap/obstacle_layer/parameter_descriptions" />
-    <remap from="/move_base/global_costmap/obstacle_layer/parameter_updates"				to="/robot1/move_base/global_costmap/obstacle_layer/parameter_updates" />
-    <remap from="/move_base/global_costmap/parameter_descriptions"				          to="/robot1/move_base/global_costmap/parameter_descriptions" />
-    <remap from="/move_base/global_costmap/parameter_updates"				                to="/robot1/move_base/global_costmap/parameter_updates" />
-    <remap from="/move_base/global_costmap/static_layer/parameter_descriptions"			to="/robot1/move_base/global_costmap/static_layer/parameter_descriptions" />
-    <remap from="/move_base/global_costmap/static_layer/parameter_updates"				  to="/robot1/move_base/global_costmap/static_layer/parameter_updates" />
     <remap from="/move_base/goal"				                                            to="/robot1/move_base/goal" />
-    <remap from="/move_base/local_costmap/costmap"				                          to="/robot1/move_base/local_costmap/costmap" />
-    <remap from="/move_base/local_costmap/costmap_updates"				                  to="/robot1/move_base/local_costmap/costmap_updates" />
-    <remap from="/move_base/local_costmap/footprint"                                to="/robot1/move_base/local_costmap/footprint" />
-    <remap from="/move_base/local_costmap/inflation_layer/parameter_descriptions"		to="/robot1/move_base/local_costmap/inflation_layer/parameter_descriptions" />
-    <remap from="/move_base/local_costmap/inflation_layer/parameter_updates"				to="/robot1/move_base/local_costmap/inflation_layer/parameter_updates" />
-    <remap from="/move_base/local_costmap/obstacle_layer/parameter_descriptions"		to="/robot1/move_base/local_costmap/obstacle_layer/parameter_descriptions" />
-    <remap from="/move_base/local_costmap/obstacle_layer/parameter_updates"				  to="/robot1/move_base/local_costmap/obstacle_layer/parameter_updates" />
-    <remap from="/move_base/local_costmap/parameter_descriptions"				            to="/robot1/move_base/local_costmap/parameter_descriptions" />
-    <remap from="/move_base/local_costmap/parameter_updates"				                to="/robot1/move_base/local_costmap/parameter_updates" />
-    <remap from="/move_base/parameter_descriptions"				                          to="/robot1/move_base/parameter_descriptions" />
-    <remap from="/move_base/parameter_updates"				                              to="/robot1/move_base/parameter_updates" />
     <remap from="/move_base/recovery_status"				                                to="/robot1/move_base/recovery_status" />
     <remap from="/move_base/result"				                                          to="/robot1/move_base/result" />
     <remap from="/move_base/status"				                                          to="/robot1/move_base/status" />
+    
+    <remap from="/move_base/DWAPlannerROS/cost_cloud"				                        to="/move_base1/DWAPlannerROS/cost_cloud" />
+    <remap from="/move_base/DWAPlannerROS/global_plan"				                      to="/move_base1/DWAPlannerROS/global_plan" />
+    <remap from="/move_base/DWAPlannerROS/local_plan"				                        to="/move_base1/DWAPlannerROS/local_plan" />
+    <remap from="/move_base/DWAPlannerROS/parameter_descriptions"	                  to="/move_base1/DWAPlannerROS/parameter_descriptions" />
+    <remap from="/move_base/DWAPlannerROS/parameter_updates"		                    to="/move_base1/DWAPlannerROS/parameter_updates" />
+    <remap from="/move_base/DWAPlannerROS/trajectory_cloud"			                    to="/move_base1/DWAPlannerROS/trajectory_cloud" />
+    <remap from="/move_base/NavfnROS/plan"				                                  to="/move_base1/NavfnROS/plan" />
+    <remap from="/move_base/cancel"				                                          to="/move_base1/cancel" />
+    <remap from="/move_base/current_goal"				                                    to="/move_base1/current_goal" />
+    <remap from="/move_base/global_costmap/costmap"				                          to="/move_base1/global_costmap/costmap" />
+    <remap from="/move_base/global_costmap/costmap_updates"			                    to="/move_base1/global_costmap/costmap_updates" />
+    <remap from="/move_base/global_costmap/footprint"				                        to="/move_base1/global_costmap/footprint" />
+    <remap from="/move_base/global_costmap/inflation_layer/parameter_descriptions"  to="/move_base1/global_costmap/inflation_layer/parameter_descriptions" />
+    <remap from="/move_base/global_costmap/inflation_layer/parameter_updates"				to="/move_base1/global_costmap/inflation_layer/parameter_updates" />
+    <remap from="/move_base/global_costmap/obstacle_layer/parameter_descriptions"		to="/move_base1/global_costmap/obstacle_layer/parameter_descriptions" />
+    <remap from="/move_base/global_costmap/obstacle_layer/parameter_updates"				to="/move_base1/global_costmap/obstacle_layer/parameter_updates" />
+    <remap from="/move_base/global_costmap/parameter_descriptions"				          to="/move_base1/global_costmap/parameter_descriptions" />
+    <remap from="/move_base/global_costmap/parameter_updates"				                to="/move_base1/global_costmap/parameter_updates" />
+    <remap from="/move_base/global_costmap/static_layer/parameter_descriptions"			to="/move_base1/global_costmap/static_layer/parameter_descriptions" />
+    <remap from="/move_base/global_costmap/static_layer/parameter_updates"				  to="/move_base1/global_costmap/static_layer/parameter_updates" />
+    <remap from="/move_base/local_costmap/costmap"				                          to="/move_base1/local_costmap/costmap" />
+    <remap from="/move_base/local_costmap/costmap_updates"				                  to="/move_base1/local_costmap/costmap_updates" />
+    <remap from="/move_base/local_costmap/footprint"                                to="/move_base1/local_costmap/footprint" />
+    <remap from="/move_base/local_costmap/inflation_layer/parameter_descriptions"		to="/move_base1/local_costmap/inflation_layer/parameter_descriptions" />
+    <remap from="/move_base/local_costmap/inflation_layer/parameter_updates"				to="/move_base1/local_costmap/inflation_layer/parameter_updates" />
+    <remap from="/move_base/local_costmap/obstacle_layer/parameter_descriptions"		to="/move_base1/local_costmap/obstacle_layer/parameter_descriptions" />
+    <remap from="/move_base/local_costmap/obstacle_layer/parameter_updates"				  to="/move_base1/local_costmap/obstacle_layer/parameter_updates" />
+    <remap from="/move_base/local_costmap/parameter_descriptions"				            to="/move_base1/local_costmap/parameter_descriptions" />
+    <remap from="/move_base/local_costmap/parameter_updates"				                to="/move_base1/local_costmap/parameter_updates" />
+    <remap from="/move_base/parameter_descriptions"				                          to="/move_base1/parameter_descriptions" />
+    <remap from="/move_base/parameter_updates"				                              to="/move_base1/parameter_updates" />
+    
   </node>
 </launch>
