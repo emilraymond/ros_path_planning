@@ -44,7 +44,7 @@ def return_to_base():
         baseGoal.target_pose.pose.position =  home.position
         baseGoal.target_pose.pose.orientation =  home.orientation
 
-        action = actionlib.SimpleActionClient(robotName+"/move_base", MoveBaseAction)
+        action = actionlib.SimpleActionClient(robotName+"move_base", MoveBaseAction)
         action.send_goal(baseGoal)
     return
 
@@ -58,7 +58,7 @@ robotName = ""
 if __name__ == '__main__':
     try:
         if len(sys.argv) > 1:
-            robotName = sys.argv[1]
+            robotName = sys.argv[1] + '/'
 
         home1.position = Point(-1.0, 0.0, 0.0)
         home1.orientation = Quaternion(0.0, 0.0, 1.0, 1.0)
@@ -67,16 +67,16 @@ if __name__ == '__main__':
         home3.position = Point(1.0, 0.0, 0.0)
         home3.orientation = Quaternion(0.0, 0.0, 1.0, 1.0)
         
-        if robotName == 'robot1':
+        if robotName == 'robot1/':
             home = home1
-        elif robotName == 'robot3':
+        elif robotName == 'robot3/':
             home = home3
         else:
             home = home2
 
-        rospy.init_node(robotName+'_move_base_py')
-        rospy.Subscriber('/'+robotName+'/move_base/goal', MoveBaseActionGoal, callback_movebase_goal)
-        rospy.Subscriber('/'+robotName+'/move_base/result', MoveBaseActionResult, callback_movebase_result)
+        rospy.init_node(robotName[:-1]+'_move_base_py')
+        rospy.Subscriber('/'+robotName+'move_base/goal', MoveBaseActionGoal, callback_movebase_goal)
+        rospy.Subscriber('/'+robotName+'move_base/result', MoveBaseActionResult, callback_movebase_result)
         
         if len(sys.argv) > 1:
             rospy.loginfo("Listenning on %s...", robotName)
