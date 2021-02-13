@@ -14,3 +14,6 @@ adjust run-singlebot-demo.launch file with your username
 
 3. Single Robot ->
 run run-singlebot-demo.launch in gnome-terminal window
+
+4. Single Robot ->
+run run-multibot-demo.launch in gnome-terminal window
